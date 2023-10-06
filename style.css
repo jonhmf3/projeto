@@ -54,6 +54,7 @@ body {
   /* background: color image repeat position/size */
   /*background: url(./assets/bg-mobile.jpg) no-repeat top center/cover; deixar a imagem de cor fundo*/
   background: var(--bg-url) no-repeat top center/cover; /* o var é para trocar a cor de fundo */
+ height: 100vh;
 }
 /* Para utilizar a fonte em todos elementos do body */
 body * {
@@ -189,4 +190,16 @@ footer {
   padding: 24px 0;
   text-align: center;
   font-size: 14px; /* fonte do rodapé */
+}
+
+/* media queries */
+
+@media (min-width: 700px) {
+  :root {
+    --bg--url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg--url: url(./assets/bg-desktop.jpg);
+  }
 }
