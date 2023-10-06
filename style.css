@@ -9,9 +9,20 @@
   --bg-url: url(./assets/bg-mobile.jpg); /* para mudar a cor de fundo preta */
   --stroke-color: rgba(255, 255, 255, 0.5); /* cor da borda dos botões */
   --surface-color: rgba(255, 255, 255, 0.05); /*cor de fundo dos botões */
-  --surface-color-hover: rgba(0, 0, 0, 0, 0.02); /*cor de fundo dos botões quando passa o mouse em cima*/
-  --highlight-color: rgba(255, 255, 255, 0.2); /* cor quando passa o mouse em cima do social link */
-  --switch-bg-url: url(./assets/moon-stars.svg); 
+  --surface-color-hover: rgba(
+    0,
+    0,
+    0,
+    0,
+    0.02
+  ); /*cor de fundo dos botões quando passa o mouse em cima*/
+  --highlight-color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* cor quando passa o mouse em cima do social link */
+  --switch-bg-url: url(./assets/moon-stars.svg);
 }
 
 .light {
@@ -19,8 +30,18 @@
   --bg-url: url(./assets/bg-mobile-light.jpg); /* para mudar a cor de fundo branca */
   --stroke-color: rgba(0, 0, 0, 0.5); /* cor da borda dos botões */
   --surface-color: rgba(0, 0, 0, 0.05); /*cor de fundo dos botões */
-  --surface-color-hover: rgba(0, 0, 0, 0.02); /*cor de fundo dos botões quando passa o mouse em cima*/
-  --highlight-color: rgba(0, 0, 0, 0.1); /* cor quando passa o mouse em cima do social link */
+  --surface-color-hover: rgba(
+    0,
+    0,
+    0,
+    0.02
+  ); /*cor de fundo dos botões quando passa o mouse em cima*/
+  --highlight-color: rgba(
+    0,
+    0,
+    0,
+    0.1
+  ); /* cor quando passa o mouse em cima do social link */
   --switch-bg-url: url(./assets/sun.svg); /* mudar a imagem do switch */
 }
 
@@ -41,10 +62,10 @@ body * {
 }
 
 #container {
-  width: 360px; /* largura */
+  width: 100%; /* largura */
   /*height: 712px;  altura não é necessário */
   /* border: 1px solid red;  borda 1px de largura solida de cor vermelha só para ter noção da caixa */
-
+  max-width: 588px;
   margin: 56px auto 0px auto; /* margem aplicada cima,lado direito, abaixo, lado esquerdo 
   */
   padding: 0 24px;
@@ -66,14 +87,14 @@ body * {
 }
 
 /*Switch */
-#switch{
-/*border: 1px solid red;*/
-position: relative;
-width: 64px;
-margin: 4px auto;
+#switch {
+  /*border: 1px solid red;*/
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
 }
 
-#switch button{
+#switch button {
   width: 32px;
   height: 32px;
   background: white var(--switch-bg-url) no-repeat center;
@@ -81,7 +102,7 @@ margin: 4px auto;
   border-radius: 50%;
   position: absolute;
   top: 50%;
-  
+
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
@@ -92,9 +113,9 @@ margin: 4px auto;
   left: initial; /* para voltar o botão inicial */
 }
 
-#switch span{
+#switch span {
   display: block; /* por padrão o span é display inline então não aceitaria algumas propriedades inclusive a largura com isso temos que colocar o display block para aceitar */
-   width: 64px;
+  width: 64px;
   height: 24px;
   background: var(--surface-color);
   border: 1px solid var(--stroke-color);
