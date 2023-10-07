@@ -17,6 +17,6 @@ function toggleMode() {
     img.setAttribute("src", "./assets/Avatar-light.png")
     // se não, manter a imagem normal
   } else {
-    img.setAttribute("src", "./assets/Avatar1.png")
+    img.setAttribute("src", "./assets/Avatar.png")
   }
 }
