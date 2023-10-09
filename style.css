@@ -5,70 +5,39 @@
 }
 
 :root {
-  --text-color: white; /* nome criado para mudar a cor de texto e colocar na variavél para ficar na cor branca */
-  --bg-url: url(./assets/bg-mobile.jpg); /* para mudar a cor de fundo preta */
-  --stroke-color: rgba(255, 255, 255, 0.5); /* cor da borda dos botões */
-  --surface-color: rgba(255, 255, 255, 0.05); /*cor de fundo dos botões */
-  --surface-color-hover: rgba(
-    0,
-    0,
-    0,
-    0,
-    0.02
-  ); /*cor de fundo dos botões quando passa o mouse em cima*/
-  --highlight-color: rgba(
-    255,
-    255,
-    255,
-    0.2
-  ); /* cor quando passa o mouse em cima do social link */
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
   --switch-bg-url: url(./assets/moon-stars.svg);
 }
 
 .light {
-  --text-color: black; /* nome criado para mudar a cor de texto e colocar na variavél para ficar na cor preta */
-  --bg-url: url(./assets/bg-mobile-light.jpg); /* para mudar a cor de fundo branca */
-  --stroke-color: rgba(0, 0, 0, 0.5); /* cor da borda dos botões */
-  --surface-color: rgba(0, 0, 0, 0.05); /*cor de fundo dos botões */
-  --surface-color-hover: rgba(
-    0,
-    0,
-    0,
-    0.02
-  ); /*cor de fundo dos botões quando passa o mouse em cima*/
-  --highlight-color: rgba(
-    0,
-    0,
-    0,
-    0.1
-  ); /* cor quando passa o mouse em cima do social link */
-  --switch-bg-url: url(./assets/sun.svg); /* mudar a imagem do switch */
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
 }
 
 body {
-  /* background-image: url(./assets/bg-mobile.jpg) ;
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: cover; */
-
-  /* background: color image repeat position/size */
-  /*background: url(./assets/bg-mobile.jpg) no-repeat top center/cover; deixar a imagem de cor fundo*/
-  background: var(--bg-url) no-repeat top center/cover; /* o var é para trocar a cor de fundo */
+  background: var(--bg-url) no-repeat top center/cover;
   height: 100vh;
 }
-/* Para utilizar a fonte em todos elementos do body */
+
 body * {
   font-family: "Inter", sans-serif;
-  color: var(--text-color); /* variavél para mudar cor de texto */
+  color: var(--text-color);
 }
 
 #container {
-  width: 100%; /* largura */
-  /*height: 712px;  altura não é necessário */
-  /* border: 1px solid red;  borda 1px de largura solida de cor vermelha só para ter noção da caixa */
+  width: 100%;
   max-width: 588px;
-  margin: 56px auto 0px auto; /* margem aplicada cima,lado direito, abaixo, lado esquerdo 
-  */
+  margin: 56px auto 0px auto;
   padding: 0 24px;
 }
 
@@ -84,12 +53,11 @@ body * {
 #profile p {
   font-weight: 500;
   line-height: 24px;
-  margin-top: 8px; /*margem entre a imagem e o texto */
+  margin-top: 8px;
 }
 
 /*Switch */
 #switch {
-  /*border: 1px solid red;*/
   position: relative;
   width: 64px;
   margin: 4px auto;
@@ -111,8 +79,6 @@ body * {
 }
 
 .light #switch button {
-  /*right: 0;
-  left: initial;  para voltar o botão inicial, não precisará quando tem o animation */
   animation: slide-in 0.4s forwards;
 }
 
@@ -121,70 +87,64 @@ body * {
 }
 
 #switch span {
-  display: block; /* por padrão o span é display inline então não aceitaria algumas propriedades inclusive a largura com isso temos que colocar o display block para aceitar */
+  display: block;
   width: 64px;
   height: 24px;
   background: var(--surface-color);
   border: 1px solid var(--stroke-color);
   backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px); /* Para funcionar em todos navegadores */
+  -webkit-backdrop-filter: blur(4px);
   border-radius: 9999px;
 }
 
 /* Links */
 
 ul {
-  list-style: none; /* Tirar a marcação */
-  display: flex; /* montou uma borda em cada elemento <li> */
-  flex-direction: column; /* Organiza a borda abaixo */
-  gap: 16px; /* Dar espaço entre a borda */
-  padding: 24px 0; /*para dar espaço do botão e o icon entre eles */
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
 }
 
 ul li a {
-  /* border: 1px solid red;  para ter a borda de referência */
   display: flex;
-  justify-content: center; /* centralizar o texto, com o flex ele irá ter uma linha imaginaria horizontal*/
-  align-items: center; /* alinhar os itens  terá uma linha imaginária na vertical */
-  padding: 16px 24px; /* largura e altura, pode também utilizar o height */
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
   background: var(--surface-color);
-  border: 1px solid var(--stroke-color); /* borda da caixa */
-  border-radius: 8px; /* arredondar  borda */
-  backdrop-filter: blur(
-    4px
-  ); /* Para embasar e tem que colocar o webkit de liberação do browser */
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  text-decoration: none; /* Para tirar a linha do link */
+  text-decoration: none;
   font-weight: 500;
   transition: background 0.2s;
 }
 
-/*pseudo-selector, o ':hover' é para estilizar quando passa o mouse em cima de um link */
 ul li a:hover {
   background: var(--surface-color-hover);
 
-  border: 1.5px solid var(--text-color); /* variavél para mudar cor de texto  da borda */
+  border: 1.5px solid var(--text-color);
 }
 
 /* Social-Links*/
 
 #social-links {
   display: flex;
-  justify-content: center; /* com o display flex coloca-se o justify para alinhar ao meio */
+  justify-content: center;
 
-  padding: 24px 0; /* espaços em cima e em baixo */
-  font-size: 24px; /* essa fonte será usada em todo elemento do seletor social-links */
+  padding: 24px 0;
+  font-size: 24px;
 }
-
-/* para alinhar corretamente os icons no meio */
 
 #social-links a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px; /* alinhar os icons */
+  padding: 16px;
   transition: background 0, 2s;
-  border-radius: 50%; /* borda em formatado de circulo */
+  border-radius: 50%;
 }
 
 #social-links a:hover {
@@ -195,7 +155,7 @@ ul li a:hover {
 footer {
   padding: 24px 0;
   text-align: center;
-  font-size: 14px; /* fonte do rodapé */
+  font-size: 14px;
 }
 
 /* media queries */
